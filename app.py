@@ -1,8 +1,6 @@
-
 import streamlit as st
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Set the title of the Streamlit app
@@ -80,9 +78,8 @@ if uploaded_file is not None:
     st.write(ranked_alternatives)
 
     # Plot the ranking
-    plt.figure(figsize=(10, 6))
+    st.write("Ranking of alternatives based on TOPSIS scores:")
     sns.barplot(x='TOPSIS Score', y='Alternative', data=ranked_alternatives, palette='viridis')
-    plt.title("TOPSIS Ranking of Alternatives")
     st.pyplot()
 
 else:
